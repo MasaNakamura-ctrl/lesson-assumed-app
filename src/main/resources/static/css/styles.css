@@ -1,0 +1,38 @@
+h1{
+    color: indigo;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: lightgray;
+    text-decoration: none;
+}
+
+h2{
+    text-align: center;
+}
+
+input{
+    border: solid 1px;
+    padding: 5px;
+}
+
+.login{
+    text-align: center;
+}
+
+.btn {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+br {
+    display: block;
+    content: "";
+    margin: 10px 0;
+    }
+
+.mock-error{
+    color:red;
+}

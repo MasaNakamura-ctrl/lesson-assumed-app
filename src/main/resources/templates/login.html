@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lesson Assumed History</title>
-        <link rel="stylesheet" href="/css/styles.css">
-        <script src="/js/script.js"></script>
+        <title>レッスン記録</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+        <script th:src="@{/js/script.js}"></script>
     </head>
     <body>
-        <h1>Lesson Assumed History Home Login</h1>
+        <h1>レッスン記録</h1>
+        <h2>ログイン</h2>
+        <div class="login">
+            <input type="text" placeholder="ユーザーID">
+            <br>
+            <input type="text" placeholder="パスワード">
+            <br>
+            <a th:href="@{/home}" class="btn">ログイン</a>
+            <br>
+            <!-- モックにてログインに失敗した場合を想定したメッセージ -->
+            <p class="mock-error">ユーザーIDまたはパスワードが違います</p>
+        </div>
     </body>
 </html>
