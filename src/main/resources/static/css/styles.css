@@ -36,3 +36,27 @@ br {
 .mock-error{
     color:red;
 }
+
+.history-table{
+    margin:auto;
+    border-collapse: collapse;
+    width:400px;
+}
+
+.table-column{
+    color:indigo;
+    background-color: lightgray;
+}
+
+.add-btn{
+    text-align: center;
+}
+
+.read-btn {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 3px;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+}
