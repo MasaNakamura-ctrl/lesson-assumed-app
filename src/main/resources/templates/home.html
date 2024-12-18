@@ -23,9 +23,7 @@
                 <th>生徒名3</th>
                 <!-- 記録詳細画面へ遷移 -->
                 <th>
-                    <a class="read-btn">
-                        確認
-                    </a>
+                    <a class="read-btn">確認</a>
                 </th>
             </tr>
             <tr>
@@ -34,9 +32,7 @@
                 <th>生徒名2</th>
                 <!-- 記録詳細画面へ遷移 -->
                 <th>
-                    <a class="read-btn">
-                        確認
-                    </a>
+                    <a class="read-btn">確認</a>
                 </th>
             </tr>
             <tr>
@@ -45,16 +41,14 @@
                 <th>生徒名1</th>
                 <!-- 記録詳細画面へ遷移 -->
                 <th>
-                    <a class="read-btn">
-                        確認
-                    </a>
+                    <a th:href="@{/read}" class="read-btn">確認</a>
                 </th>
             </tr>
         </table>
         <div class="add-btn">
             <br>
             <!-- 記録登録画面へ遷移 -->
-            <a class="btn">登録</a>
+            <a th:href="@{/create}" class="btn">登録</a>
         </div>
     </body>
 </html>
