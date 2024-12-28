@@ -11,15 +11,17 @@
         <h1>レッスン記録</h1>
         <h2>ログイン</h2>
         <div class="login">
-            <input type="text" placeholder="ユーザーID">
-            <br>
-            <input type="password" placeholder="パスワード">
-            <br>
-            <!-- ユーザーIDとパスワードが正しければ記録一覧画面へ遷移 -->
-            <a th:href="@{/home}" class="btn">ログイン</a>
+            <form action="/check" method="POST">
+                <input type="text" placeholder="ユーザーID" id="id" name="id" required>
+                <br>
+                <input type="password" placeholder="パスワード" id="password" name="password" required>
+                <br>
+                <!-- ユーザーIDとパスワードが正しければ記録一覧画面へ遷移 -->
+                <button class="btn" type="submit">ログイン</button>
+            </form>
             <br>
             <!-- モックにてログインに失敗した場合を想定したメッセージ -->
-            <p class="mock-error">ユーザーIDまたはパスワードが違います</p>
+            <p class="mock-error" th:if="${error}" th:text="${error}"></p>
         </div>
     </body>
 </html>
