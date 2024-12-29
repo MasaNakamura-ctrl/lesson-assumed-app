@@ -12,15 +12,15 @@
         <h2>ログイン</h2>
         <div class="login">
             <form action="/check" method="POST">
-                <input type="text" placeholder="ユーザーID" id="id" name="id" required>
+                <input type="text" placeholder="ユーザーID" id="userid" name="userid" required>
                 <br>
-                <input type="password" placeholder="パスワード" id="password" name="password" required>
+                <input type="password" placeholder="パスワード" id="confirmword" name="confirmword" required>
                 <br>
                 <!-- ユーザーIDとパスワードが正しければ記録一覧画面へ遷移 -->
                 <button class="btn" type="submit">ログイン</button>
             </form>
             <br>
-            <!-- モックにてログインに失敗した場合を想定したメッセージ -->
+            <!-- ログインに失敗した場合にメッセージを表示 -->
             <p class="mock-error" th:if="${error}" th:text="${error}"></p>
         </div>
     </body>
