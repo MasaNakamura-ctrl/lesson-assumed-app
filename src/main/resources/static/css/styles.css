@@ -48,6 +48,10 @@ br {
     background-color: lightgray;
 }
 
+.table-line{
+    text-align: center;
+}
+
 .add-btn{
     text-align: center;
 }
