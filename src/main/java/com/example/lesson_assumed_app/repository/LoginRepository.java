@@ -10,6 +10,7 @@ public class LoginRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @SuppressWarnings("deprecation")
     public boolean existsByKeys(String userid, String confirmword){
         String sql = "SELECT COUNT(*) FROM users WHERE userid = ? AND confirmword = ?";
         Integer count = jdbcTemplate.queryForObject(sql, new Object[]{userid, confirmword}, Integer.class);
