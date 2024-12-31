@@ -27,7 +27,7 @@
                     <td th:text="${lessons.studentName}"></td>
                     <!-- 記録詳細画面へ遷移 -->
                     <th>
-                        <a th:href="@{/read}" class="read-btn">確認</a>
+                        <a th:href="@{'/read/' + ${lessons.id}}" class="read-btn">確認</a>
                     </th>
                 </tr>
             </tbody>
