@@ -22,9 +22,9 @@
                 <input type="text" name="lessonMemo" th:placeholder="${lessons.lessonMemo}" required>
                 <br>
                 <!-- DBを更新せずレッスン記録参照画面へ遷移 -->
-                <a th:href="@{'/read/' + ${lessons.id}}" class="btn">戻る</a>
+                <a th:href="@{'/read/' + ${lessons.id}}" class="button-style">戻る</a>
                 <!-- DBを更新の上ホーム画面へ遷移 -->
-                <button type="submit" class="btn">更新</button>
+                <button type="submit" class="button-style">更新</button>
             </form>
         </div>
     </body>
