@@ -24,7 +24,10 @@
             <!-- 編集画面へ遷移 -->
             <a th:href="@{'/update/' + ${lessons.id}}" class="button-style">編集</a>
             <!-- DBから削除の上ホーム画面へ遷移 -->
-            <a th:href="@{/home}" class="button-style">削除</a>
+            <form th:action="@{/read/home}" method="post" style="display:inline;">
+                <input type="hidden" name="id" th:value="${lessons.id}">
+                <button type="submit" class="button-style" onclick="return confirm('本当に削除しますか？');">削除</button>
+            </form>
         </div>
     </body>
 </html>
