@@ -22,10 +22,6 @@ public class HomeController {
         model.addAttribute("lessons", lessons);
         return "home";
     }
-    @GetMapping("/update")
-    public String update(){
-        return "update";
-    }
     @GetMapping("/create")
     public String create() {
         return "create";
