@@ -7,23 +7,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.lesson_assumed_app.entity.ReadEntity;
 import com.example.lesson_assumed_app.model.Lesson;
 import com.example.lesson_assumed_app.repository.ReadRepository;
+import com.example.lesson_assumed_app.repository.UpdateRepository;
 import com.example.lesson_assumed_app.service.HomeService;
+
 
 
 @Controller
 @RequestMapping("/update")
 public class UpdateController {
     private final ReadRepository readRepository;
+    private final UpdateRepository updateRepository;
     @Autowired
     private HomeService homeService;
 
-    public UpdateController(ReadRepository readRepository){
+    public UpdateController(ReadRepository readRepository, UpdateRepository updateRepository){
         this.readRepository = readRepository;
+        this.updateRepository = updateRepository;
     }
 
     @GetMapping("/{id}")
@@ -40,5 +46,14 @@ public class UpdateController {
             model.addAttribute("lessons", lessons);
             return "home";
         }
+    }
+
+    @PostMapping("/{id}")
+    public String postUpdate(@PathVariable("id") int id,
+                            @RequestParam("studentName") String studentName,
+                            @RequestParam("lessonMemo") String lessonMemo) {
+        // 更新処理の実行
+        updateRepository.updateLesson(id, studentName, lessonMemo);
+        return "redirect:/home";
     }
 }

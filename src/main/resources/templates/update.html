@@ -11,19 +11,21 @@
         <h1>レッスン記録</h1>
         <h2>レッスン記録編集</h2>
         <div class="login">
-            <h3>id</h3>
-            <p><span th:text="${lessons.id}"></span></p>
-            <h3>登録日</h3>
-            <p><span th:text="${lessons.lessonDate}"></span></p>
-            <h3>生徒名</h3>
-            <input type="text" th:placeholder="${lessons.studentName}" required>
-            <h3>進捗・課題</h3>
-            <input type="text" th:placeholder="${lessons.lessonMemo}" required>
-            <br>
-            <!-- DBを更新せずレッスン記録参照画面へ遷移 -->
-            <a th:href="@{'/read/' + ${lessons.id}}" class="btn">戻る</a>
-            <!-- DBを更新の上ホーム画面へ遷移 -->
-            <a th:href="@{/home}" class="btn">更新</a>
+            <form th:action="@{'/update/' + ${lessons.id}}" method="post">
+                <h3>id</h3>
+                <p><span th:text="${lessons.id}"></span></p>
+                <h3>登録日</h3>
+                <p><span th:text="${lessons.lessonDate}"></span></p>
+                <h3>生徒名</h3>
+                <input type="text" name="studentName" th:placeholder="${lessons.studentName}" required>
+                <h3>進捗・課題</h3>
+                <input type="text" name="lessonMemo" th:placeholder="${lessons.lessonMemo}" required>
+                <br>
+                <!-- DBを更新せずレッスン記録参照画面へ遷移 -->
+                <a th:href="@{'/read/' + ${lessons.id}}" class="btn">戻る</a>
+                <!-- DBを更新の上ホーム画面へ遷移 -->
+                <button type="submit" class="btn">更新</button>
+            </form>
         </div>
     </body>
 </html>

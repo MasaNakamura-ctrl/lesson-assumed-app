@@ -21,7 +21,7 @@ public class HomeRepository {
 
     public List<Lesson> findAll(){
         // Lessonにて全項目を取得できるようhome.htmlで表示しないカラム"lessonMemo"も取得
-        String sql = "SELECT * FROM history";
+        String sql = "SELECT * FROM history ORDER BY id";
         return jdbcTemplate.query(sql, new HomeRowMapper());
     }
 
