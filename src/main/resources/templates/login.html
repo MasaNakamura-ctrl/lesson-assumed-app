@@ -10,18 +10,18 @@
     <body>
         <h1>レッスン記録</h1>
         <h2>ログイン</h2>
-        <div class="login">
+        <div class="common">
             <form action="/check" method="POST">
-                <input type="text" placeholder="ユーザーID" id="userid" name="userid" required>
+                <input type="text" placeholder="ユーザーID" id="userid" name="userid" maxlength="10" required>
                 <br>
-                <input type="password" placeholder="パスワード" id="confirmword" name="confirmword" required>
+                <input type="password" placeholder="パスワード" id="confirmword" name="confirmword" maxlength="10" required>
                 <br>
                 <!-- ユーザーIDとパスワードが正しければ記録一覧画面へ遷移 -->
-                <button class="button-style" type="submit">ログイン</button>
+                <button class="button-style blue-button" type="submit">ログイン</button>
             </form>
             <br>
             <!-- ログインに失敗した場合にメッセージを表示 -->
-            <p class="mock-error" th:if="${error}" th:text="${error}"></p>
+            <p class="msg-error" th:if="${error}" th:text="${error}"></p>
         </div>
     </body>
 </html>

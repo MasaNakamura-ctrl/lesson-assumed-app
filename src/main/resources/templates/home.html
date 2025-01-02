@@ -7,7 +7,7 @@
         <link rel="stylesheet" th:href="@{/css/styles.css}">
         <script th:src="@{/js/script.js}"></script>
     </head>
-    <div>
+    <body>
         <h1>レッスン記録</h1>
         <h2>記録一覧</h2>
         <table class="history-table" border="1">
@@ -27,7 +27,7 @@
                     <td th:text="${lessons.studentName}"></td>
                     <!-- 記録詳細画面へ遷移 -->
                     <th>
-                        <a th:href="@{'/read/' + ${lessons.id}}" class="read-btn">確認</a>
+                        <a th:href="@{'/read/' + ${lessons.id}}" class="button-style red-button">確認</a>
                     </th>
                 </tr>
             </tbody>
@@ -35,7 +35,7 @@
         <div class="add-btn">
             <br>
             <!-- 記録登録画面へ遷移 -->
-            <a th:href="@{/create}" class="button-style">登録</a>
+            <a th:href="@{/create}" class="button-style blue-button">登録</a>
         </div>
     </body>
 </html>

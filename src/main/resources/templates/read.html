@@ -10,23 +10,27 @@
     <body>
         <h1>レッスン記録</h1>
         <h2>レッスン記録参照</h2>
-        <div class="login">
+        <div class="common">
             <h3>id</h3>
             <p><span th:text="${lessons.id}"></span></p>
+            <br>
             <h3>登録日</h3>
             <p><span th:text="${lessons.lessonDate}"></span></p>
+            <br>
             <h3>生徒名</h3>
             <p><span th:text="${lessons.studentName}"></span></p>
+            <br>
             <h3>進捗・課題</h3>
             <p><span th:text="${lessons.lessonMemo}"></span></p>
+            <br>
             <!-- ホーム画面へ遷移 -->
-            <a th:href="@{/home}" class="button-style">戻る</a>
+            <a th:href="@{/home}" class="button-style white-button">戻る</a>
             <!-- 編集画面へ遷移 -->
-            <a th:href="@{'/update/' + ${lessons.id}}" class="button-style">編集</a>
+            <a th:href="@{'/update/' + ${lessons.id}}" class="button-style blue-button">編集</a>
             <!-- DBから削除の上ホーム画面へ遷移 -->
-            <form th:action="@{/read/home}" method="post" style="display:inline;">
+            <form th:action="@{/read/home}" method="POST" style="display:inline;">
                 <input type="hidden" name="id" th:value="${lessons.id}">
-                <button type="submit" class="button-style" onclick="return confirm('本当に削除しますか？');">削除</button>
+                <button type="submit" class="button-style red-button" onclick="return confirm('本当に削除しますか？');">削除</button>
             </form>
         </div>
     </body>

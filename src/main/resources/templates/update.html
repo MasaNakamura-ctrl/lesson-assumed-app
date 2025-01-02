@@ -10,21 +10,24 @@
     <body>
         <h1>レッスン記録</h1>
         <h2>レッスン記録編集</h2>
-        <div class="login">
-            <form th:action="@{'/update/' + ${lessons.id}}" method="post">
+        <div class="common">
+            <form th:action="@{'/update/' + ${lessons.id}}" method="POST">
                 <h3>id</h3>
                 <p><span th:text="${lessons.id}"></span></p>
+                <br>
                 <h3>登録日</h3>
                 <p><span th:text="${lessons.lessonDate}"></span></p>
+                <br>
                 <h3>生徒名</h3>
-                <input type="text" name="studentName" th:placeholder="${lessons.studentName}" required>
+                <input type="text" name="studentName" th:placeholder="${lessons.studentName}" maxlength="10" required>
+                <br>
                 <h3>進捗・課題</h3>
-                <input type="text" name="lessonMemo" th:placeholder="${lessons.lessonMemo}" required>
+                <input type="text" name="lessonMemo" th:placeholder="${lessons.lessonMemo}" maxlength="200" required>
                 <br>
                 <!-- DBを更新せずレッスン記録参照画面へ遷移 -->
-                <a th:href="@{'/read/' + ${lessons.id}}" class="button-style">戻る</a>
+                <a th:href="@{'/read/' + ${lessons.id}}" class="button-style white-button">戻る</a>
                 <!-- DBを更新の上ホーム画面へ遷移 -->
-                <button type="submit" class="button-style">更新</button>
+                <button type="submit" class="button-style blue-button">更新</button>
             </form>
         </div>
     </body>

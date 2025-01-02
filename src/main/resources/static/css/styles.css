@@ -1,3 +1,10 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1{
     color: indigo;
     padding: 20px;
@@ -7,6 +14,7 @@ h1{
 }
 
 h2{
+    padding: 10px;
     text-align: center;
 }
 
@@ -15,7 +23,7 @@ input{
     padding: 5px;
 }
 
-.login{
+.common{
     text-align: center;
 }
 
@@ -23,12 +31,27 @@ input{
     display: inline-block;
     padding: 5px 10px;
     font-size: 16px;
-    color: black;
-    background-color: white;
+    font-weight:bold;
     border:solid 1px;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
+    cursor: pointer;
+}
+
+.white-button{
+    color: gray;
+    background-color: white;
+}
+
+.red-button{
+    color: white;
+    background-color: red;
+}
+
+.blue-button{
+    color: white;
+    background-color: blue;
 }
 
 br {
@@ -37,7 +60,7 @@ br {
     margin: 10px 0;
     }
 
-.mock-error{
+.msg-error{
     color:red;
 }
 
@@ -57,17 +80,5 @@ br {
 }
 
 .add-btn{
-    text-align: center;
-}
-
-.read-btn {
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 16px;
-    color: white;
-    background-color: red;
-    border:solid 1px;
-    border-radius: 5px;
-    text-decoration: none;
     text-align: center;
 }
