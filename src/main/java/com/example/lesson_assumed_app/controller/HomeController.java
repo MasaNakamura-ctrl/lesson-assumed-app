@@ -22,8 +22,4 @@ public class HomeController {
         model.addAttribute("lessons", lessons);
         return "home";
     }
-    @GetMapping("/create")
-    public String create() {
-        return "create";
-    }
 }

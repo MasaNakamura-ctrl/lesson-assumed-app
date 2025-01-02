@@ -11,15 +11,17 @@
         <h1>レッスン記録</h1>
         <h2>レッスン記録登録</h2>
         <div class="login">
-            <h3>生徒名</h3>
-            <input type="text" placeholder="生徒名" required>
-            <h3>進捗・課題</h3>
-            <input type="text" placeholder="進捗・課題" required>
-            <br>
-            <!-- DBに登録されることなくホーム画面へ遷移 -->
-            <a th:href="@{/home}" class="button-style">戻る</a>
-            <!-- DBに登録の上ホーム画面へ遷移 -->
-            <a th:href="@{/home}" class="button-style">登録</a>
+            <form action="/home" method="POST">
+                <h3>生徒名</h3>
+                <input type="text" placeholder="生徒名" name="studentName" required>
+                <h3>進捗・課題</h3>
+                <input type="text" placeholder="進捗・課題" name="lessonMemo" required>
+                <br>
+                <!-- DBに登録されることなくホーム画面へ遷移 -->
+                <a th:href="@{/home}" class="button-style">戻る</a>
+                <!-- DBに登録の上ホーム画面へ遷移 -->
+                <button class="button-style" type="submit">登録</button>
+            </form>
         </div>
     </body>
 </html>
