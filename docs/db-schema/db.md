@@ -9,10 +9,10 @@
 ## カラム定義
 | テーブル名   | カラム名 | 型 | 最大文字数 | 主キー | 必須 | 概要 |
 | --- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| users   | id | INTEGER |  | ○ | ○ | ユーザーの管理ID(主キー) |
+| users   | id | INTEGER |  | ○ | ○ | ユーザーの管理ID |
 | users   | userId | VARCHAR | 10 |  | ○ | ユーザーID |
 | users   | confirmWord | VARCHAR | 10 |  | ○ | パスワード |
-| history   | id | INTEGER |  | ○ | ○ | レッスン記録の管理ID(主キー) |
+| history   | id | INTEGER |  | ○ | ○ | レッスン記録の管理ID |
 | history   | lessonDate | DATE |  |  | ○ | レッスン記録の登録日 |
 | history   | studentName | VARCHAR | 10 |  | ○ | 生徒名 |
 | history   | lessonMemo | VARCHAR | 200 |  | ○ | レッスンでの進捗・記録といった詳細情報 |
