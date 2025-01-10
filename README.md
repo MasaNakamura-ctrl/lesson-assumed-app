@@ -56,7 +56,7 @@
 
 画面録画の都合でレコード削除での確認ダイアログが非表示となっていますが、[単体テスト](./docs/unit-test/unit-tests/no15.md)にてきちんと表示されることは確認済みです。
 
-<video src="./docs/screen-design/images/lesson-assumed-app.mp4" controls="true" width="800"></video>
+[![WATCHME](https://img.youtube.com/vi/oaYXNaPVrBQ/0.jpg)](https://www.youtube.com/watch?v=oaYXNaPVrBQ)
 
 各機能の詳細は"lesson-assumed-app/docs/各画面設計書(login.md,home.md,create.md,read.md,update.md)"を参照してください。
 
