@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - lesson-assumed-network
+    environment:
+          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+          SPRING_DATASOURCE_USERNAME: user
+          SPRING_DATASOURCE_PASSWORD: password
+networks:
+  lesson-assumed-network: # 事前にdocker network create lesson-assumed-networkでネットワークを作成
+    external: true

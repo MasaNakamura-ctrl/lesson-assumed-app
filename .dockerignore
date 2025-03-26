@@ -1,0 +1,10 @@
+target/
+*.jar
+*.war
+.vscode/
+.git/
+.gitattributes
+.gitignore
+README.md
+HELP.md
+docs/
