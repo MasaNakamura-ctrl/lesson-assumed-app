@@ -40,7 +40,9 @@
 #### インフラ管理
 - Docker 20.10.12
 
-    導入理由：PostgreSQLをこの中で構築し、他のDB環境との競合を避けるため
+    導入理由(アプリ側)：デプロイを想定し、DBと独立させるため
+
+    導入理由(DB側)：PostgreSQLをこの中で構築し、他のDB環境との競合を避けるため
 
 #### コードエディター
 - Visual Studio Code
@@ -59,6 +61,19 @@
 [![WATCHME](https://img.youtube.com/vi/oaYXNaPVrBQ/0.jpg)](https://www.youtube.com/watch?v=oaYXNaPVrBQ)
 
 各機能の詳細は"lesson-assumed-app/docs/各画面設計書(login.md,home.md,create.md,read.md,update.md)"を参照してください。
+
+## 起動方法
+1. 使用しているOSにてDockerをインストールの上、[DBセットアップ説明書](./docs/db-schema/db-setup.md)に沿ってDBを立ち上げてください。
+
+2. その後本リポジトリをcloneし、DBと同じく下記のコマンドからコンテナの立ち上げを行ってください。
+```
+docker-compose build # 作り直す必要がなければ初回以降の実行は不要
+docker-compose up -d
+```
+3. 停止する際はDBのコンテナとアプリのコンテナそれぞれで下記のコマンドを実行してください。
+```
+docker-compose down
+```
 
 ## 工夫した点
 1. 現場で必要とされる機能を実装できるようにするため、CRUDの機能だけでなくログイン機能の実装も行いました。
@@ -82,6 +97,8 @@ lesson-assumed-app/
         └── 本アプリケーションのソースコード
 ```
 3. アプリの性質上UIがシンプルになってしまうので、データの操作に直接関係するボタンに色を付けることでユーザーが行いたい処理をするにはどれを押下すればよいか直感的にわかるようにしました。
+
+4. 今後のデプロイを見据え、アプリ側とDB側のそれぞれでコンテナ化をさせました。
 
 ## 今後の課題
 ### フロントエンドの実装能力を拡張

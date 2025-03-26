@@ -19,8 +19,7 @@
 ## 各ファイルの記述
 docker-compose.yml
 ```
-version: '3.8'
-
+version: "3.8"
 services:
   postgres:
     image: postgres:latest
@@ -35,9 +34,13 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data # 永続化のためのボリュームマウント
       - ./init:/docker-entrypoint-initdb.d
-
+    networks:
+      - lesson-assumed-network
 volumes:
   pg_data: # 永続化ボリュームの定義
+networks:
+  lesson-assumed-network: # 事前にdocker network create lesson-assumed-networkでネットワークを作成
+    external: true
 ```
 
 init.sql
@@ -68,7 +71,15 @@ INSERT INTO history (lessonDate, studentName, lessonMemo) VALUES
 ## 起動・接続方法
 使用しているOSにてDockerをインストールの上、ターミナルでディレクトリを*postgres*へ移動してください。
 
-その次に下記のコマンドを実行するとコンテナ内にpostgreSQLのデータベースとテーブルを構築し立ち上げることができます。
+そうしたら下記のコマンドを入力してください。
+
+```
+docker network create lesson-assumed-network
+```
+
+このコマンドを入力するとDBのコンテナと本アプリのコンテナをそれぞれ起動した際に、同じネットワーク上で接続できるようになります。
+
+続けて下記のコマンドを順に実行するとコンテナ内にpostgreSQLのデータベースとテーブルを構築し立ち上げることができます。
 ```
 docker-compose build
 docker-compose up -d
