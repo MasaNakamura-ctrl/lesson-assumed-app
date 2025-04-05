@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS history(
     lessonDate DATE NOT NULL,
     studentName VARCHAR(10) NOT NULL,
     lessonMemo VARCHAR(200) NOT NULL
-)
+);
 
 INSERT INTO history (lessonDate, studentName, lessonMemo) VALUES
 ('2025-01-01', 'student01', 'memo01'),
