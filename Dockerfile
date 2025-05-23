@@ -13,4 +13,4 @@ RUN ./mvnw package -DskipTests
 # 必要ポートをEXPOSE（Renderでは効果薄だが一応）
 EXPOSE 8080
 # アプリを起動
-CMD ["java", "-Dserver.port=$PORT", "-jar", "target/lesson-assumed-app-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Dserver.port=8080", "-jar", "target/lesson-assumed-app-0.0.1-SNAPSHOT.jar"]
