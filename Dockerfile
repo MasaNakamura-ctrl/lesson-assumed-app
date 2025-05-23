@@ -10,5 +10,7 @@ RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline -B
 # アプリをビルド（テストをスキップ）
 RUN ./mvnw package -DskipTests
+# 必要ポートをEXPOSE（Renderでは効果薄だが一応）
+EXPOSE 8080
 # アプリを起動
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["java", "-Dserver.port=$PORT", "-jar", "target/lesson-assumed-app-0.0.1-SNAPSHOT.jar"]
