@@ -129,7 +129,7 @@ docker-compose down
 - デプロイとDB構築完了後に再度システムテストを実施
 - 完了次第AWSでデプロイしたものの公開を停止
 
-### [リンク先](https://lesson-assumed-app.onrender.com/)
+### ログイン方法
 - ユーザーID:lessonList
 - パスワード:confirming
 
