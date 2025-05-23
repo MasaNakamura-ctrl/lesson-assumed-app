@@ -10,7 +10,7 @@
 - **`コンテナ構築:Docker`**
 - **`単体テスト`**
 - **`結合テスト`**
-- **`クラウドサービス(本番環境)にデプロイ:AWS`**
+- **`クラウドサービス(本番環境)にデプロイ:AWS,Render`**
 - **`システムテスト`**
 
 ## 概要
@@ -128,6 +128,8 @@ docker-compose down
 - [和楽知屋](https://github.com/MasaNakamura-ctrl/WaGotcha)のデプロイに合わせRenderへデプロイを実施
 - デプロイとDB構築完了後に再度システムテストを実施
 - 完了次第AWSでデプロイしたものの公開を停止
+
+    詳細はQiitaに掲載しているので[こちら](https://qiita.com/mshr_nkmr_ai/items/807b5b11dc53efc12cb1)をご覧ください。
 
 ### ログイン方法
 - ユーザーID:lessonList
